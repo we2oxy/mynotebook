@@ -1,0 +1,16 @@
+#!/usr/bin/expect
+
+
+set timeout 10
+
+set exp_user [lindex $argv 0]
+set exp_host [lindex $argv 1]
+set exp_cmd [lindex $argv 2]
+set exp_pass [lindex $argv 3]
+
+
+spawn ssh -o StrictHostKeyChecking=no $exp_user@$exp_host "$exp_cmd"
+expect {
+    "*password" {exp_send "$exp_pass\r"}
+}
+expect eof

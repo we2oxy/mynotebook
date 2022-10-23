@@ -1,0 +1,30 @@
+[root@Centos7 home]# cat add_ssh_copy_id.sh
+#!/bin/bash
+
+file_num=`cat ip.txt|wc -l`
+
+for i in `seq $file_num`;
+do
+expect auto_ssh.exp  `sed -n ${i}p ip.txt|awk '{print $1}'` `sed -n ${i}p ip.txt|awk '{print $2}'` `sed -n ${i}p ip.txt|awk '{print $3}'`
+sleep 0.5
+done
+[root@Centos7 home]# cat auto_ssh.exp
+#!/usr/bin/expect
+
+
+set timeout 10
+
+set exp_host [lindex $argv 0]
+set exp_user [lindex $argv 1]
+set exp_pass [lindex $argv 2]
+
+
+spawn ssh-copy-id -o StrictHostKeyChecking=no $exp_user@$exp_host
+expect {
+    "*password" {exp_send "$exp_pass\r"}
+}
+expect eof
+[root@Centos7 home]# cat ip.txt
+10.10.10.10 root 111111
+10.10.10.20 root 111111
+10.10.10.30 root 111111

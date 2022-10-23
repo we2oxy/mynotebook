@@ -1,0 +1,186 @@
+﻿Windows Registry Editor Version 5.00
+;关闭系统自动调试功能，提高系统运行速度
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AeDebug]
+"Auto"="0"
+
+;加快程序出错处理速度，关闭系统自动调试功能，提高系统性能
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\AeDebug]
+"Auto"="0"
+
+;自动优化启动分区，加快启动速度(打开启动优化功能)
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Dfrg\BootOptimizeFunction]
+"Enable"="Y"
+
+;关闭网络节流
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"NetworkThrottlingIndex"=dword:ffffffff
+"SystemResponsiveness"=dword:00000014
+
+;关闭SEHOP
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
+"ObUnsecureGlobalNames"=hex(7):6e,00,65,00,74,00,66,00,78,00,63,00,75,00,73,00,\
+  74,00,6f,00,6d,00,70,00,65,00,72,00,66,00,63,00,6f,00,75,00,6e,00,74,00,65,\
+  00,72,00,73,00,2e,00,31,00,2e,00,30,00,00,00,53,00,68,00,61,00,72,00,65,00,\
+  64,00,50,00,65,00,72,00,66,00,49,00,50,00,43,00,42,00,6c,00,6f,00,63,00,6b,\
+  00,00,00,43,00,6f,00,72,00,5f,00,50,00,72,00,69,00,76,00,61,00,74,00,65,00,\
+  5f,00,49,00,50,00,43,00,42,00,6c,00,6f,00,63,00,6b,00,00,00,43,00,6f,00,72,\
+  00,5f,00,50,00,75,00,62,00,6c,00,69,00,63,00,5f,00,49,00,50,00,43,00,42,00,\
+  6c,00,6f,00,63,00,6b,00,5f,00,00,00,54,00,70,00,56,00,63,00,57,00,33,00,32,\
+  00,51,00,75,00,65,00,75,00,65,00,00,00,00,00
+"SeTokenSingletonAttributesConfig"=dword:00000003
+"obcaseinsensitive"=dword:00000001
+"DpcWatchdogProfileOffset"=dword:00002710
+"DisableExceptionChainValidation"=dword:00000001
+
+;开启CMD下按Tab键自动完成功能
+[HKEY_CURRENT_USER\Software\Microsoft\Command Processor]
+"CompletionChar"=dword:9
+
+;局域网(LAN)设置中去掉"自动检测设置"的勾选
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections]
+"DefaultConnectionSettings"=hex:46,00,00,00,03,00,00,00,01,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"SavedLegacySettings"=hex:46,00,00,00,0c,00,00,00,01,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00
+
+;完全开启显卡加速
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
+"Acceleration.Level"=dword:00000000
+"Display1_DownScalingSupported"=dword:00000000
+"AlwaysUseSWRotation"=dword:00000000
+"DCPowerPolicyVersion"=dword:00002102
+"DCUserPreferencePolicy"=dword:00000000
+"ACPowerPolicyVersion"=dword:00004202
+"ACUserPreferencePolicy"=dword:00000000
+"TurboAcPolicy"=dword:00000001
+"PowerDcPolicy"=dword:005e005e
+"PowerDpstAggressivenessLevel"=dword:00000006
+"PowerGpsAggressivenessLevel"=dword:00000001
+"PowerAcPolicy"=dword:005e005e
+"TurboDcPolicy"=dword:00000001
+"ConnectedStandbyPlatform"=dword:00000000
+"FirstBootDone"=dword:00000001
+
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000\Settings]
+"Acceleration.Level"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000\VolatileSettings]
+"{5b45201d-f2f2-4f3b-85bb-30ff1f953599}"=hex:5c,00,3f,00,3f,00,5c,00,50,00,43,\
+  00,49,00,23,00,56,00,45,00,4e,00,5f,00,38,00,30,00,38,00,36,00,26,00,44,00,\
+  45,00,56,00,5f,00,30,00,31,00,36,00,36,00,26,00,53,00,55,00,42,00,53,00,59,\
+  00,53,00,5f,00,31,00,30,00,46,00,44,00,31,00,30,00,34,00,33,00,26,00,52,00,\
+  45,00,56,00,5f,00,30,00,39,00,23,00,33,00,26,00,31,00,31,00,35,00,38,00,33,\
+  00,36,00,35,00,39,00,26,00,30,00,26,00,31,00,30,00,23,00,7b,00,35,00,62,00,\
+  34,00,35,00,32,00,30,00,31,00,64,00,2d,00,66,00,32,00,66,00,32,00,2d,00,34,\
+  00,66,00,33,00,62,00,2d,00,38,00,35,00,62,00,62,00,2d,00,33,00,30,00,66,00,\
+  66,00,31,00,66,00,39,00,35,00,33,00,35,00,39,00,39,00,7d,00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
+
+"Acceleration.Level"=dword:00000000
+"Display1_DownScalingSupported"=dword:00000000
+"AlwaysUseSWRotation"=dword:00000000
+"DCPowerPolicyVersion"=dword:00002102
+"DCUserPreferencePolicy"=dword:00000000
+"ACPowerPolicyVersion"=dword:00004202
+"ACUserPreferencePolicy"=dword:00000000
+"TurboAcPolicy"=dword:00000001
+"PowerDcPolicy"=dword:005e005e
+"PowerDpstAggressivenessLevel"=dword:00000006
+"PowerGpsAggressivenessLevel"=dword:00000001
+"PowerAcPolicy"=dword:005e005e
+"TurboDcPolicy"=dword:00000001
+"ConnectedStandbyPlatform"=dword:00000000
+"FirstBootDone"=dword:00000001
+
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000\Settings]
+"Acceleration.Level"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000\VolatileSettings]
+"{5b45201d-f2f2-4f3b-85bb-30ff1f953599}"=hex:5c,00,3f,00,3f,00,5c,00,50,00,43,\
+  00,49,00,23,00,56,00,45,00,4e,00,5f,00,38,00,30,00,38,00,36,00,26,00,44,00,\
+  45,00,56,00,5f,00,30,00,31,00,36,00,36,00,26,00,53,00,55,00,42,00,53,00,59,\
+  00,53,00,5f,00,31,00,30,00,46,00,44,00,31,00,30,00,34,00,33,00,26,00,52,00,\
+  45,00,56,00,5f,00,30,00,39,00,23,00,33,00,26,00,31,00,31,00,35,00,38,00,33,\
+  00,36,00,35,00,39,00,26,00,30,00,26,00,31,00,30,00,23,00,7b,00,35,00,62,00,\
+  34,00,35,00,32,00,30,00,31,00,64,00,2d,00,66,00,32,00,66,00,32,00,2d,00,34,\
+  00,66,00,33,00,62,00,2d,00,38,00,35,00,62,00,62,00,2d,00,33,00,30,00,66,00,\
+  66,00,31,00,66,00,39,00,35,00,33,00,35,00,39,00,39,00,7d,00
+
+;优化IRQ
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
+"IRQ8Priority"=dword:00000001
+
+;优化内存配置，加速程序（如：游戏）的运行速度
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"IoPageLockLimit"=dword:08000000
+
+;性能为程序优化
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
+"Win32PriorityControl"=dword:00000026
+"Win32PrioritySeparation"=dword:00000026
+"ConvertibleSlateMode"=dword:00000000
+
+;优化Windows文件列表刷新策略
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoSimpleNetIDList"=dword:00000001
+
+;启动期间禁止更新组策略以加快启动
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"SynchronousUserGroupPolicy"=dword:00000000
+"SynchronousMachineGroupPolicy"=dword:00000000
+
+;关闭 Windows 客户体验改善计划
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\SQMClient\Windows]
+"CEIPEnable"=dword:00000000
+
+;禁止"突出显示新安装的程序"
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_NotifyNewApps"=dword:00000000
+
+;如果 Internet Explorer 不是默认的 Web 浏览器，不提示我
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Check_Associations"="no"
+
+;不检查下载程序的签名
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Download]
+"CheckExeSignatures"="no"
+
+;启用自动图像大小调整
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Enable AutoImageResize"="yes"
+
+;总是将 ClearType 用于 HTML*
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"UseClearType"="yes"
+
+;IE Security Policy
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}]
+"IsInstalled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}]
+"IsInstalled"=dword:00000000
+
+;菜单速度
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ExtendedUIHoverTime"=dword:00000000        
+"DesktopLivePreviewHoverTime"=dword:00000000
+
+;去掉IE笑脸图标
+[HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoHelpItemSendFeedback"=dword:00000001
+
+;快速启动
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
+;"HiberbootEnabled"=dword:00000000
+
+;开启自动刷新
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"AutoRestartShell"=dword:00000001
+
+;关闭显示受保护文件时警告提示
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Folder\SuperHidden]
+"WarningIfNotDefault"=-

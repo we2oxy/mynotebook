@@ -1,0 +1,46 @@
+Windows Registry Editor Version 5.00
+;启用音频服务
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AudioEndpointBuilder]
+"Start"=dword:00000002
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Audiosrv]
+"Start"=dword:00000002
+
+;Functiion Discovery Resource Publication(资源发布服务)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FDResPub]
+"Start"=dword:00000003
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"EnableAutodial"=dword:00000000
+
+;关闭 IPsec Policy Agent 服务
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\PolicyAgent]
+"Start"=dword:00000004
+
+; NetBIOS TCP/IP NetBIOS Helper 名称解析的支持。
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LmHosts]
+"Start"=dword:00000002
+
+;关闭事件跟踪程序
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Reliability]
+"ShutdownReasonOn"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Policies\Microsoft\Windows NT\Reliability]
+"ShutdownReasonOn"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config]
+"MaxNegPhaseCorrection"=dword:bbf81e00
+"MaxPosPhaseCorrection"=dword:bbf81e00
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient]
+"SpecialPollInterval"=dword:00015180
+
+;开机不自动运行服务器管理器
+[HKEY_CURRENT_USER\Software\Microsoft\ServerManager]
+"DoNotOpenServerManagerAtLogon"=dword:00000001
+
+;遥测设置为“安全”
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"AllowTelemetry"=dword:00000000
+
+;强制开启Superfetch
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
+"EnableSuperfetch"=dword:00000003
+"EnablePrefetcher"=dword:00000001
