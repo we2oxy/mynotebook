@@ -29,8 +29,9 @@ function check_list(){
 }
 
 function init_mysql_user(){
-	groupadd ${MYSQL_GRP} &>/dev/null || sh -c "echo '${MYSQL_GRP} group is exits' && exit 4"
+	groups ${MYSQL_GRP} &>/dev/null || sh -c "echo '${MYSQL_GRP} group is exits' && exit 4"
 	id ${MYSQL_USER} &>/dev/null || sh -c "echo 'USER:${MYSQL_USER} or GROUP:${MYSQL_GRP} already exits';exit 5"
+	groupadd ${MYSQL_GRP}
 	useradd -r -g ${MYSQL_GRP} -s /bin/false ${MYSQL_USER} 
 }
 
