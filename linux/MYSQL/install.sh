@@ -86,7 +86,7 @@ function init_mysql_env(){
 }
 
 function init_mysql_db(){
-	[ ! -d ${MYSQL_DATADIR}/mysql ] && ${MYSQL_PREFIX}/bin/mysqld --initialize-insecure --user=a${MYSQL_USER} --basedir=${MYSQL_PREFIX} --datadir=${MYSQL_DATADIR}
+	[ ! -d ${MYSQL_DATADIR}/mysql ] && ${MYSQL_PREFIX}/bin/mysqld --initialize-insecure --user=${MYSQL_USER} --basedir=${MYSQL_PREFIX} --datadir=${MYSQL_DATADIR}
 }
 
 function start_mysql_srv(){
@@ -114,4 +114,3 @@ chowner_mysql
 init_mysql_env
 init_mysql_db
 start_mysql_srv
-reset_mysql_pass
