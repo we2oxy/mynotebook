@@ -43,8 +43,8 @@ function init_mysql(){
 	# init mysql_conf
 	[ -f ${MYSQL_CONF} ] && mv ${MYSQL_CONF} ${MYSQL_CONF}-`date +%F_%T`
 	[ -f /root/.my.cnf ] && mv /root/.my.cnf /root/.my.cnf-`date +%F_%T`
-	echo -e "[client]\nport=3306\ndefault-character-set=UTF8MB4\nno-auto-rehash" > /root/.my.cnf
-	echo -e "[mysqld]\nserver-id=`date +%s`\nport=3306\nbind_address=0.0.0.0\nuser=mysql\ncharacter_set_server=UTF8MB4\nbasedir=${MYSQL_PREFIX}\ndatadir=${MYSQL_DATADIR}\nsocket=${MYSQL_PREFIX}/mysql.sock\nlog-error=${MYSQL_PREFIX}/error.log\nlog_bin=${MYSQL_PREFIX}/binlog" > ${MYSQL_CONF}
+	echo -e "[client]\nport=3306\ndefault-character-set=UTF8MB4\nno-auto-rehash\n${MYSQL_PREFIX}/mysql.sock" > /root/.my.cnf
+	echo -e "[mysqld]\nserver-id=`date +%s`\nport=3306\nskip-name-resolve\nbind_address=0.0.0.0\nuser=mysql\ncharacter_set_server=UTF8MB4\nbasedir=${MYSQL_PREFIX}\ndatadir=${MYSQL_DATADIR}\nsocket=${MYSQL_PREFIX}/mysql.sock\nlog-error=${MYSQL_PREFIX}/error.log\nlog_bin=${MYSQL_PREFIX}/binlog" > ${MYSQL_CONF}
 	# init mysql_datadir
 	[ -d ${MYSQL_DATADIR} ] && echo "${MYSQL_DATADIR} already exits!" && exit 6
 	mkdir -p ${MYSQL_DATADIR} ${MYSQL_PREFIX}/binlog
