@@ -83,6 +83,55 @@ skip-grant-tables#在/etc/my.cnf中添加
 update mysql.user set authentication_string=password('123456') where user='root'; #修改密码后重启mysql
 ALTER USER 'root'@'localhost' IDENTIFIED BY '123456'
 flush privileges;
+加密配置用户信息
+[root@mydb01 mysql]# mysql_config_editor set --login-path=root --host=172.16.0.200 --port=3306 --socket=/apps/mysql/mysql.sock--user=root --password
+Enter password: 
+[root@mydb01 mysql]# mysql_config_editor print --all
+[root]
+password = *****
+host = 172.16.0.200
+socket = /apps/mysql/mysql.sock--user=root
+port = 3306
+[root@mydb01 mysql]# mysql --login-path=root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4
+Server version: 5.7.25-28 Percona Server (GPL), Release 28, Revision c335905
+
+Copyright (c) 2009-2019 Percona LLC and/or its affiliates
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> \s
+--------------
+mysql  Ver 14.14 Distrib 5.7.25-28, for Linux (x86_64) using  6.2
+
+Connection id:		4
+Current database:	
+Current user:		root@172.16.0.200
+SSL:			Cipher in use is ECDHE-RSA-AES128-GCM-SHA256
+Current pager:		stdout
+Using outfile:		''
+Using delimiter:	;
+Server version:		5.7.25-28 Percona Server (GPL), Release 28, Revision c335905
+Protocol version:	10
+Connection:		172.16.0.200 via TCP/IP
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+TCP port:		3306
+Uptime:			8 min 20 sec
+
+Threads: 1  Questions: 21  Slow queries: 0  Opens: 115  Flush tables: 1  Open tables: 108  Queries per second avg: 0.042
+--------------
+
+mysql> 
+
 ```
 
 # systemd启动mysql
