@@ -127,8 +127,43 @@ LISTEN      0      100                                     ::1:25               
 [root@CentOS7 nginx]# /nginx/sbin/nginx 
 
 
-```
+./configure \
+--prefix=/work/nginx \
+--conf-path=/work/nginx/nginx.conf \
+--modules-path=/work/nginx/modules \
+--error-log-path=/var/log/nginx/error.log \
+--http-log-path=/var/log/nginx/access.log \
+--pid-path=/var/run/nginx.pid \
+--lock-path=/var/run/nginx.lock \
+--user=nginx \
+--group=nginx \
+--with-file-aio \
+--with-threads \
+--with-http_auth_request_module \
+--with-http_gunzip_module \
+--with-http_gzip_static_module \
+--with-http_realip_module \
+--with-http_secure_link_module \
+--with-http_slice_module \
+--with-http_ssl_module \
+--with-http_stub_status_module \
+--with-http_sub_module \
+--with-http_v2_module \
+--with-stream \
+--with-stream=dynamic \
+--with-stream_geoip_module \
+--with-stream_geoip_module=dynamic \
+--with-stream_realip_module \
+--with-stream_ssl_module \
+--with-stream_ssl_preread_module \
+--with-http_geoip_module \
+--with-http_geoip_module=dynamic \
+--with-compat 
 
+
+export NGINX_HOME=/work/nginx
+export PATH=$NGINX_HOME/sbin:$PATH
+```
 
 
 ## CentOS6服务启动脚本
