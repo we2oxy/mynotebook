@@ -164,7 +164,24 @@ LISTEN      0      100                                     ::1:25               
 export NGINX_HOME=/work/nginx
 export PATH=$NGINX_HOME/sbin:$PATH
 ```
+## logrotate
+```
+/usr/local/nginx/logs/access.log  {
+daily
+rotate 7
+missingok
+dateext
+compress
+delaycompress
+notifempty
+sharedscripts
+postrotate
+    [ -e /usr/local/nginx/logs/nginx.pid ] && kill -USR1 `cat /usr/local/nginx/logs/nginx.pid`
+endscript
+}
 
+/usr/sbin/logrotate -f -d /work/nginx/logrotate-nginx.conf
+```
 
 ## CentOS6服务启动脚本
 
